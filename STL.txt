@@ -1,0 +1,366 @@
+		STANDARD TEMPLATE LIBRARY (STL)
+
+it is a collection of powerful and generic algos,containers and functions that are part of standard cpp library that can be used to simplify the development of cpp programs . 
+
+it provides a set of commonly used data structures and algo that are highly optimized, reusable and portable across different compilers and platforms. 
+
+It is a generalized library and so, its components are parameterized.
+
+It provides a range if containers, such as vectors,lists and maps as well as algos for searching , sorting and manipulating data.
+
+BENIFIT: it provides a way to write generic, reusable code that can be applied to different data types. 
+
+This means that you can write an algorithm once, and then use it with different types of data without having to write separate code for each type.
+
+Many of the algorithms and data structures in the STL are implemented using optimized algorithms, which can result in faster execution times compared to custom code.
+
+
+	COMPONENTS OF STL
+
+1. containers: it is a holder obj that stores a collection of other objects(its elements).
+
+they are implemented as class templates, which allows great flexibility in the types supported as elements.
+
+The container manages the storage space for its elements and provides member functions to access them, either directly or through iterators (reference objects with similar properties to pointers). 
+
+stl provides a range of containers such as vectors,list ,map, set and stack,which can be used to store and manipulate data. 
+
+
+sequence containers
+
+Sequence containers implement data structures that can be accessed sequentially. 
+
+1. array: static contiguous array (class template):
+
+#library: #include <array>
+
+syntax : array<{data-type},{size}> a = {--elements--};
+
+*for finding size = <array>.size()
+
+* direct accessing element = <array>.at(index)
+
+* to check whether an array is empty or not= <array>.empty()
+
+* to access the first element of array= <array>.front()
+
+* to access the last element of array= <array>.back()
+
+in short, stl array is based on basic array.
+
+therefore, in competetive programming (cp), we don't use stl array cause it's static.
+
+time complexity: everything has o(1) complexity
+
+===========================================================================================
+2. vector: dynamic contiguous array (class template):are the dynamic arrays with the ability to resize itself automatically when an element is inserted or deleted with their storage being handled automatically by the container.
+
+CASE cum WORKING
+
+if we are storing (n+1) elements in 'n' size of an array . 
+
+then, the vector will double its size and copies the elements of old vector in new vector and dumps the old vector.
+
+we can use shrink to fit operation to increase or decrease the size of the vector.
+
+DIFFERENCE BETWEEN SIZE AND CAPACITY
+
+size: shows the no. of element stored in an array/vector currently
+capacity: total memory allocated to a particular array/vector.
+
+ex: step1: empty vector
+    step2: add 1 element   
+    step3: add 1 element (here the memory allocated to array/capacity: 1*2=2)
+    step4: add 1 element (here, the no.of element=3 and the memory allocated to array=2
+                          since, 3>2 , therefore, the capacity of the array= 2*2=4)
+
+ *we may use <vector-name>.at(), front(),back(),here as well.
+
+* pop_back(): is used to remove the element from the end of the vector
+
+syntax: <vector-name>.pop_back();
+
+* <vector-name>.clear() : discards all the elements present in the vector.
+
+here, the size become zero but the capacity remains the same.
+(size=0,capacity!=n ,i.e.,same)
+
+INITIALIZING TECHNIQUE-2: if all the elements in a vector have identical elements
+
+vector<data-type> <vector-name> (size,<the element>)
+
+INITIALIZING TECHNIQUE-3: if we define the size of array
+
+vector<data-type> <vector-name> (size)
+
+*to copy elements of one vector to another one = 
+vector<data-type> <vector-name> (<vector-to-be copied)
+
+Vector elements are placed in contiguous storage so that they can be accessed and traversed using iterators.
+
+In vectors, data is inserted at the end.
+
+Inserting at the end takes differential time, as sometimes the array may need to be extended. 
+
+Removing the last element takes only constant time because no resizing happens.
+
+Inserting and erasing at the beginning or in the middle is linear in time.
+
+#library: #include <vector>
+
+std::vector is a class template that contains the vector conatiner and its member functions.  
+
+TIME COMPLEXITY: o(1)
+
+===========================================================================================
+3. deque/double-ended queue (class template)  [pronunciation: D-e-c-k also DQ]
+
+in this you may push and pop elements from both ends ,i.e., starting and the ending.
+
+they are similar to vectors but are more efficient in case of insertion and deletion of elements. 
+
+*library = #include <deque>
+
+*it is dynamic in nature.
+
+unlike vectors, contiguous storage allocation may not be guaranteed.
+
+in complex words, 
+
+in case of arrays and vectors we have contiguous memory location to store data .
+
+but in deque, we have multiple fixed static arrays and tracking takes place in order to ensure where a particular set of data is.  
+
+DIFFERENT FUNCTIONS:
+
+* declaring a deque: deque<data-type> <deque-name> 
+* add element in front of deque : <deque-name>.push_front(<element>) 
+* pop element from front of deque: <deque-name>.pop_front(<element>)  
+* to delete/pop element(s) in range : <deque-name>.erase(iterator1,iterator2) 
+* to copy a range inside with iterators: copy(iterator1,iterator 2,<where to insert>)
+*to insert a range at the back: back_inserter(<where you want to store>)
+
+The time complexities for doing various operations on deques are-
+
+* Accessing Elements- O(1)
+* Insertion or removal of elements- O(N)
+* Insertion or removal of elements at start or end- O(1)
+
+===========================================================================================
+4. list: double-linked list (class template)
+
+in double linked list we have two pointers , one in front and other one at the back .
+
+direct access of element is not possible in here, we need to travel to reach there. 
+
+erase()=  time complexity :O(n)
+rest all other function have : O(1)
+
+ITERATORS
+
+1. begin() – Returns an iterator pointing to the first element in the vector.
+
+2.end() – Returns an iterator pointing to the theoretical element that follows the last element in the vector.
+
+
+4. forward_list : singly linked list (class template)
+
+Associative containers
+
+Associative containers implement sorted data structures that can be quickly searched (O(logn) complexity). 
+
+1. Set: Collection of unique keys, sorted by keys  (class template):
+
+it is slower comparitively to unordered set.
+
+library: #include <sets>
+
+*declaring sets: set<data-type> |set-name|
+*inserting values: |set-name|.insert(<value>)
+*deletion: |set-name|.erase(<set-name>.iterator)
+
+*to check whether the particular element exists or not : <set-name>.count(<element>)
+*to find the iterator of a particular element: iterator <iterator-name> =<set-name>.find(<element>)
+*to print the value of that iterator : *|iterator-name|
+
+##find ,insert, erase and count have time complexity of o(logn)
+whereas, the size,begin,empty= o(1)
+
+
+2. Map: Collection of key-value pairs, sorted by keys, keys are unique (class template).
+
+* keys can have same element but an element can have only one key .
+
+*it is sorted 
+ 
+library: #include <map>
+
+*declaration of map: map<(data-type of key),(data-type of value)> |map-name|
+
+*to insert elements : 
+METHOD-1
+
+|map-name|[key]:"<value>"
+
+METHOD-2
+
+|map-name|.insert({key,"value"})
+
+*to print the keys: |map-name|.first
+*to print values: |map-name|.second
+
+*to erase an entity: |map-name|.erase(<key>)
+
+*find (complexity=o(n)) :  <map-name>.find(element) 
+
+
+
+
+3. multiset: Collection of keys, sorted by keys (class template)
+4. multimap: Collection of key-value pairs, sorted by keys (class template)
+
+
+Unordered associative containers
+
+Unordered associative containers implement unsorted (hashed) data structures that can be quickly searched (O(1) amortized, O(n) worst-case complexity). 
+
+1. unordered_set: Collection of unique keys, hashed by keys. (class template)
+
+2. unordered_map: Collection of key-value pairs, hashed by keys, keys are unique. (class template)
+
+3. unordered_multiset: Collection of keys, hashed by keys (class template)
+
+4. unordered_multimap: Collection of key-value pairs, hashed by keys (class template)
+
+
+Container adapters
+
+Container adapters provide a different interface for sequential containers. 
+
+1.stack: Adapts a container to provide stack (LIFO [last in first out] data structure) (class template).
+
+library: #include <stack>
+
+*to push (insert) element in stack: <stack-name>.push(<element to be pushed> )
+*to check the topmost element: <stack-name>.top()
+
+2.queue: Adapts a container to provide queue (FIFO [first in first out] data structure) (class template).
+
+*to check the first element: <queue-name>.front()
+
+library: #include <queue>
+
+3.priority queue: Adapts a container to provide priority queue (class template). 
+
+it is specifically designed such that the first element is either greatest or the smallest of all elements in the queue.
+
+# min – heap and max – heap are same. The difference is just that min-heap contains minimum element at root of the tree and max – heap contains maximum element at the root of the tree.
+
+*max-heap declaration: priority_queue<int><queue-name>   //by default  
+
+*min-heap declaration: priority_queue<int,vector<int>,greater<int> > <queue-name>  //we determine the range in here.
+
+library: #include <queue>
+
+the elements are in non-increasing or non-decreasing order. 
+
+hence, we can say each element of the queue has a priority . 
+
+in cpp stl, the top element is always the greatest (by default).
+
+priorty queue are built on the top of the max heap and use an array or vector as an internal structure. 
+
+ 
+
+
+2. algorithm: stl provides a range of algos such as sort,find and binary_search which can be used to manipulate datastored in containers.
+
+header used: #include <algorithm>
+
+*sorting: arranging the data in a particular fashion, which can be increasing or decreasing.
+
+builtin function in cpp stl = sort()
+
+this function internally uses intosort. 
+
+sort()=quicksort||heap sort||insertion sort
+
+By default, it uses QuickSort but if QuickSort is doing unfair partitioning and taking more than N*logN time,
+it switches to HeapSort 
+and 
+when the array size becomes really small, it switches to InsertionSort. 
+
+SYNTAX: sort(startaddress, endaddress)
+
+startaddress: the address of the first 
+              element of the array
+
+endaddress: the address of the next 
+            contiguous location of the 
+            last element of the array.
+
+So, actually sort() sorts in the 
+range of [startaddress,endaddress)
+
+// sort
+
+*searching
+
+binary search:
+
+syntax:
+
+binary_search(startaddress, 
+              endaddress, valuetofind)
+
+Parameters :
+
+startaddress: the address of the first 
+              element of the array.
+
+endaddress: the address of the next contiguous 
+            location of the last element of the array.
+
+valuetofind: the target value which we have 
+             to search for.
+
+Returns :
+true if an element equal to valuetofind is found, else false.
+===========================================================================================
+//find_if
+
+This function returns an iterator to the first element in the range [first, last) for which pred(Unary Function) returns true. If no such element is found, the function returns last.
+
+Syntax: find_if (InputIterator first, InputIterator last, UnaryPredicate pred <function that checks the condition>);
+
+Return Value
+This function returns an iterator to the first element in the range [first, last) for which pred(function) returns true. If no such element is found, the function returns last.
+
+//find_if_not
+
+This function returns an iterator to the first element in the range [first, last) for which pred(Unary Function) returns false. If no such element is found, the function returns last.
+
+Return value
+
+This function returns an iterator to the first element in the range [first, last) for which pred(function) returns false.
+
+Syntax:
+
+find_if_not (InputIterator first, InputIterator last, UnaryPredicate pred);
+
+//fill() and fill_n(): 
+
+
+
+3. Iterators: they are objects that provide a way to traverse the elements of a container. 
+
+stl provides a range of iterators such as forward_iterator,bidirectional_iterator and random_access_iterator,that can be used with different types of containers. 
+
+4. Function Objects( aka functors ): objects that can be used as function arguments to algos. 
+
+They provide a way to pass a function to an algo,allowing you to customize its behavior.
+
+5. adapters: they are the components that modify the behavior of other components in stl. 
+
+ex: the reverse_iterator adapter can be used to reverse the order of elements in a container. 
+

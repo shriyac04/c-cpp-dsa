@@ -1,0 +1,213 @@
+	functions:	
+ is also known as procedures or subroutine in other programmimg languages.
+
+by default, a function is presumed to be of integer datatype .
+
+the void data type is used as the return type for functions that do not return a value and describes an empty collection of values. 
+
+	function prototype 
+
+# include < iostream >  
+using namespace std ;  
+// Function prototype  
+void best_site ( ) ; //using function with void return type   
+int main ( ) {  
+    best_site ( ) ; //calling functio without function has been declared 
+    return 0 ;  
+}  
+//declaration
+Void best_site ( ) {  
+    cout < < " Welcome to JavaTpoint " ;  
+}  
+
+	types of functions:
+1. library function : which are declared in cpp header files such as ceil(x),cos(x),exp(x),etc.
+
+2. user-defined functions: which are created by the cpp programmer
+
+it reduces complexity of a big problem and optimizes the code.
+
+
+	CALL BY VALUE AND CALL BY REFERENCE 
+
+call by value: original value is not modified.
+
+the value being passed to the function is locally stored by the function parameter in stack memory location. 
+
+a copy of value is passed to the function.
+
+actual and formal arguments will be created in different memory location.
+
+
+call by reference: original value is modified cause we pass reference.
+
+address of the value is passed in the function, so actual and formal arguments share the same address space.
+
+changes made inside the function is reflected outside the function also.
+
+actual and formal arguments will be created in same memory location.
+
+hence, value is changed inside the function, is reflected inside as well as outside the function.
+
+
+
+	RECURSION
+when a function is called within the same function, it is known as recursion.
+
+the function which calls the same function is known as recursive function.
+
+base condition: is used to terminte the recursion. the recursive function will keep calling itself till the base condition is satisfied.
+
+Recursive case:  is the way in which the recursive call is present in the function. Recursive case can contain multiple recursive calls, or different parameters such that at the end, the base condition is satisfied and the recursion is terminated.
+
+	memory management in cpp recursion
+
+alike all other functions. the recursive function's datails stored in the stack memory in the form of a stack frame. 
+
+this stack frame is deleted once the function returns some value.
+
+In recursion,
+
+*The function call is made before returning the value, so the stack frame for the progressive recursive calls is stored on top of existing stack frames in the stack memory.
+
+*When the topmost function copy returns some value, its stack frame is destroyed and the control comes to the function just before that particular copy after the point where the recursive call was made for the top copy.
+
+*The compiler maintains an instruction pointer to track where to return after the function execution.
+
+
+	stack overflow
+
+it is one of the most common errors associated with the recursion which occurs when a function calls itself too many times.
+
+REASON: since, the stack memory is limited and each recursive call requires separate space.
+
+when there is a large no of calls or the recursion goes on infinite times, resulting in the exhaustion of the stack memory and may not be able to store more data leading to programs' termination.
+
+
+
+	types of function
+
+1. Direct recursion              2. Indirect recursion
+
+
+	direct recursion
+
+1. tail recursion: calls itself, and doesn't perform any task after function call.
+
+2. non-tail recurssion : if the recurssive call is not the last thing done by the function.After returning back there is something left to evaluate.
+
+3.Head Recursion: In head recursion, the recursive call is present at the start of the function. It is a kind of linear recursion where only a single recursive call is used.
+
+4. Tree Recursion: there are multiple recursive calls present in the body of the function. While tracing tree recursion, we get a tree-like structure where multiple recursive calls branch from one function.
+
+
+	indirect recursion
+
+the function does not call itself directly but instead, it calls another function which then eventually calls the first function creating a cycle of function calls.
+
+
+	Applications of Recursion
+
+1.Solving: Fibonacci sequences, Factorial Function, Reversing an array, Tower of Hanoi.
+
+2.Backtracking: It is a technique for solving problems by trying out different solutions and undoing them if they do not work. Recursive algorithms are often used in backtracking.
+
+3.Searching and Sorting Algorithms: Many searching and sorting algorithms, such as binary search and quicksort, use recursion to divide the problem into smaller sub-problems.
+
+4.Tree and Graph Traversal: Recursive algorithms are often used to traverse trees and graphs, such as depth-first search and breadth-first search.
+
+5.Mathematical Computations: Recursion is also used in many mathematical computations, such as the factorial function and the Fibonacci sequence.
+
+6.Dynamic Programming: It is a technique for solving optimization problems by breaking them down into smaller sub-problems. Recursive algorithms are often used in dynamic programming.
+
+
+
+	Drawbacks of Recursion
+
+1.Performance: Recursive algorithms can be less efficient than iterative algorithms in some cases, particularly if the data structure is large or if the recursion goes too deep.
+
+2.Memory usage: Recursive algorithms can use a lot of memory, particularly if the recursion goes too deep or if the data structure is large. Each recursive call creates a new stack frame on the call stack, which can quickly add up to a significant amount of memory usage.
+
+3.Code complexity: Recursive algorithms can be more complex than iterative algorithms.
+
+4.Debugging: Recursive algorithms can be more difficult to debug than iterative algorithms, particularly if the recursion goes too deep or if the program is using multiple recursive calls.
+
+5.Stack Overflow: If the recursion goes too deep, it can cause a stack overflow error, which can crash the program.
+
+
+	inline function 
+
+PROBLEM: the function's execution time is shorter than the time required to move from the calling function.
+
+APPROACH: using macro definition called macros(pre-processor). 
+
+DRAWBACK: they aren't normal functions which means the erorr checking process will not be done during the compilation.
+
+SOLUTION : in order to minimize this overhead inline function is used. 
+
+when a function is invoked, it expands in line and is known as an inline function.
+
+when an inline function is invoked, it's entire body code is added or replaced at the inline function call location. 
+
+**To the compiler,  inlining is just a request not a command.
+
+ The compiler may not implement inlining in situations like these:
+
+1. If a function contains a loop. (for, while, do-while)
+
+2. if a function has static variables.
+
+3. Whether a function recurses.
+
+4. If the return statement is absent from the function body and the return type of the function is not void.
+
+5. Whether a function uses a goto or switch statement.
+
+
+	difference between inline function and normal function 
+
+The addresses from where the function is called and the definition of the function are different. This control transfer takes a lot of time and increases the overhead.
+
+When the inline function is encountered, then the definition of the function is copied to it. In this case, there is no control transfer which saves a lot of time and also decreases the overhead.
+
+syntax:
+
+inline return_type function_name(parameters)  
+{  
+   // function code?  
+}   
+
+**We can use the inline function outside the class so that we can hide the internal implementation of the function.
+
+**It does not require any stack on which we can push or pop the variables as it does not perform any function calling.
+
+**Inline functions cannot be used in programming languages like Java or C#.
+
+
+	Advantages of inline function
+1. In the inline function, we do not need to call a function, so it does not cause any overhead.
+
+2.It also saves the overhead of the return statement from a function.
+
+3.It does not require any stack on which we can push or pop the variables as it does not perform any function calling.
+
+4.An inline function is mainly beneficial for the embedded systems as it yields less code than a normal function.
+
+	Disadvantages of inline function
+
+1.The variables that are created inside the inline function will consume additional registers. If the variables increase, then the use of registers also increases, which may increase the overhead on register variable resource utilization. It means that when the function call is replaced with an inline function body, then the number of variables also increases, leading to an increase in the number of registers. This causes an overhead on 
+resource utilization.
+
+2.If we use many inline functions, then the binary executable file also becomes large.
+The use of so many inline functions can reduce the instruction cache hit rate, reducing the speed of instruction fetch from the cache memory to that of the primary memory.
+
+3.It also increases the compile-time overhead because whenever the changes are made inside the inline function, then the code needs to be recompiled again to reflect the changes; otherwise, it will execute the old functionality.
+
+4.Sometimes inline functions are not useful for many embedded systems because, in some cases, the size of the embedded is considered more important than the speed.
+
+5.It can also cause thrashing due to the increase in the size of the binary executable file. If the thrashing occurs in the memory, then it leads to the degradation in the performance of the computer.
+
+
+
+
+ 

@@ -1,0 +1,144 @@
+	TIME COMPLEXITY AND SPACE COMPLEXITY 
+
+
+there is always more than one way to solve a problem in computer science with different algos. 
+
+therefore, it is highly required to use a method to compare the solution in order to judge which one is more optimal.
+
+the method must be : 
+
+1. independent of the machine and its configs , on which the algo is running on.
+
+2. shows a direct correlation with the number of inputs.
+
+3. can distinguish two algos clearly.
+
+
+There are two methods used in order to make the code optimal:
+
+1.time complexity
+2.space complexity
+
+Time complexity: the time required by the algorithm to solve given problem.
+
+Time complexity measures how many operations an algorithm completes in relation to the size of the input. 
+
+A function of the input refers to a mathematical relationship between the input size and the resource (such as time or space) required by the algorithm to process that input. 
+
+in simple words,
+
+it is the time needed for the completion of an algorithm . 
+
+in order to estimate the time complexity, we need to consider the cost of each fundamental instruction and the number of times the instruction is executed: 
+
+
+
+
+big O notation = maximum time = worst case =upper bound 
+thetha         = avg. case    
+                 complexity
+
+omega          = minimum tum = lower bound 
+
+
+constant time  = O(1)       - for finite loops like printing numbers from 1-10 
+linear time    = O(n)       - depends on the input,i.e.,user-inputed values
+logarithmic time = O(log n)  - binary search 
+quadratic time =  O(n^2)     - using two loops 
+cubic time     =  O(n^3)     - using three loops 
+
+            
+             ^
+o(n!)        | c
+o(2^n)       | o
+o(n^3)       | m
+o(n^2)       | p
+o(n log n)   | l
+o (n)        | e
+o(log n)     | x
+o(1)         | i
+             | t
+             | y
+
+
+
+ex-1: f(n) -> 2n^2 +3n
+
+sol: in here, lower degrees and constants are ignored.
+
+the higher ones are chosen.
+
+therefore, time complexity of the given function is o(n^2).
+
+
+ex-2: f(n) -> n^2 + log n 
+sol: o(n^2)
+
+ex-3: f(n) -> n^3/300
+sol: here ,1/300 is ignored 
+therefore, the time complexity of the given function is o(n^3)
+
+ex-4 : f(n) -> (n+4)/4    **linear time**
+sol: here, +4 and /4 is ignored 
+
+therefore, the time complexity of the given function is 0(n).
+
+
+if we encounter such scenarios we will perform following operation: 
+
+*nested loop = multiplication 
+
+*different loops = addition 
+
+ORDER OF GROWTH is how the time of execution depends on the length of the input. 
+
+
+**O(2^n) - Exponential Time Complexity:
+
+An algorithm that exhibits an exponential relationship between the execution time and the input size.
+
+Exponential time complexity indicates that the algorithm's execution time doubles with each additional element in the input, making it highly inefficient for larger input sizes.
+
+This type of time complexity is often observed in algorithms that involve an exhaustive search or generate all possible combinations.
+
+
+**O(log n) - Logarithmic Time Complexity:
+
+the execution time increases logarithmically as the input size increases.
+
+Algorithms with this complexity are often associated with efficient searching or dividing problems in half at each step.
+
+ex: binary search.
+
+
+	SPACE COMPLEXITY
+
+An algorithm's space complexity is the amount of space required to solve a problem and produce an output.
+
+Similar to the time complexity, space complexity is also expressed in big O notation.
+For an algorithm, the space is required for the following purposes:
+
+1.To store program instructions
+2.To store constant values
+3.To store variable values
+4.To track the function calls, jumping statements, etc.
+
+Auxiliary space: The extra space required by the algorithm, excluding the input size, is known as an auxiliary space. The space complexity considers both the spaces, i.e., auxiliary space, and space used by the input.
+
+So,
+
+Space complexity = Auxiliary space + Input size.
+
+CASE-1: o(1)
+
+If an algorithm has a space complexity of O(1), it means that the amount of extra space used by the algorithm remains constant regardless of the input size. 
+
+This is often seen in algorithms that use a constant amount of extra space, like a few variables or a fixed-size array.
+
+CASE-2: o(n)
+
+If an algorithm has a space complexity of O(n), it means that the space used by the algorithm grows linearly with the input size 'n'. 
+
+This might be the case when the algorithm requires additional space proportional to the input size, such as storing elements in an array or using additional data structures that grow in size with the input.
+
+

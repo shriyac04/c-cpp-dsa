@@ -1,0 +1,194 @@
+memory management: is a process of mananging computer memory,assigning the memory space to the programs to improve the overall performance.
+
+**arrays store the homogeneous data.
+**memory is allocated to the array at the declaration time.
+ 
+
+PROBLEM: when the exact memory is not determined until runtime
+eg: user-inputed values.
+
+SOLUTION: we declare an array with a maximum size
+            
+             PROBLEM-2: Wastage of memory
+             SOLUTION: we use the 'new' operator
+  'new' operator is used to allocate the memory dynamically at the run time. 
+
+
+MEMORY MANAGEMENT OPERATORS
+
+in c,
+
+**we use malloc()/calloc() in order to allocate the memory dynamically at run time.
+
+**time , free() function is used to deallocate the dynamically allocated memory.
+
+in c++,
+
+The language supports the above mentioned operators but cpp also defines unary operators 
+such as 'new' and 'delete' to perform the same task,i.e., allocating and freeing the memory.
+
+'new' operator: is used to allocate memory for objects at runtime.
+      *the memory is allocated in heap.
+                               
+        
+ 
+
+# it creates memory space for any data type or even user defined data type such as an array,structures, unions,etc.
+
+ 
+'delete' operator: is used to dellocate memory when not in use.
+                    
+
+in here, the life-time of the object is not related to the block structure of the program.
+
+
+SYNTAX: pointer_variable= new <data-type>  //object of pointer
+
+eg: int *p;
+p=new int
+
+(OR)
+
+int *p= new int;
+
+ASSIGNING A VALUE TO THE OBJECT
+
+1. using assignment operator 
+
+*p=45;
+
+2. assigning the values while declaring the object
+
+pointer_variable=new <datatype>(value);
+ 
+eg: int *p=new int(45);
+
+
+
+CREATE A 1-D ARRAY
+
+syntax: pointer_variable=new <datatype>[size];
+
+eg: int *a1=new int[8];
+
+
+DELETE OPERATOR
+
+when memory is no longer required, then it needs to be allocated so that the memory can be used for another purpose.
+delete operator is used in such cases.
+
+SYNTAX: delete pointer_variable;
+
+eg: delete p;
+
+for dynamically allocated array where size is determined:
+
+SYNTAX: delete[size] pointer_variable;  
+
+for dynamically allocated array where size is undetermined:
+
+SYNTAX: delete[]pointer_variable; 
+
+## It's applicable in the recent versions of cpp.
+
+
+
+ADVANTAGES OF NEW OPERATOR 
+
+1. It does not use the sizeof() operator as it automatically computes the size of the data object.
+
+2. It automatically returns the correct data type pointer, so it does not need to use the typecasting.
+
+3. Like other operators, the new and delete operator can also be overloaded.
+
+4. It also allows you to initialize the data object while creating the memory space for the object.
+
+
+MEMORY LEAK: occurs when programmers cretate a memory in a heap and forget to delete it.
+
+consequences faces during memory leak: it reduces the performance of the computer by reducing the amount of available memory. 
+
+memory leak are particularly serious issues for programs like daemons and servers which by definition never terminate.
+
+WORK CASE SCENARIO IN MEMORY LEAK: too much of the memory may be allocated and all or part of the system or device stops working correctly, the application fails, or the system slows down vastly.
+
+AVOIDANCE OF MEMORY LEAK: always delete the object after the execution, using delete operator in cpp and free in c.
+
+
+Malloc() vs New
+
+#both malloc() and new is used for allocating memory in heap.
+
+#malloc is specifically used in c, whereas new is used in cpp for the same functionaility.
+
+#new does call the constructor of a class whereas malloc doesn't.
+
+
+MEMORY ALLOCATION 
+
+Assigning computer programs and services to the physical or virtual memory space.
+
+The memory allocation is either done before or at the time of execution. 
+
+Two types of memory allocation:
+1. compile-time/ static memory allocation
+2.run-time/dynamic memory allocation
+
+KEYWORDS:
+ compile-time: period when conversion of programming code is converted into the machine code.
+
+run-time: period when a program is running and generally occurs after the compile time.
+
+*static memory allocation: 
+1.static memory is allocated for the comipler-declared variables by the compiler.
+2.The address of(&) operator can be assigned to a pointer.
+3.***the memory is allocated during compile time.
+4.variables get allocated permanently, till the program executes or funtion call finishes.
+5. uses stack for memory management.
+6.less efficient
+7. no memory re-usability even if the memory is unused. 
+8. once memory is allocated, memory size can't be altered.
+9.generally used for arrays.
+
+*dynamic memory allocation: 
+memory allocation is done at the time of execution.
+1. variables get allocated only if your program unit gets active. 
+2. uses heap for memory management.
+3.more efficient
+4.re-usability is possible and  memory can be freed if it's unused.
+5.the memory size can be changed. 
+6.generally used for linked list.
+7. execution is slower than the static memory allocation.
+
+
+
+Dangling pointers: are used to point a deleted(or freed) memory location. 
+
+pointer can function as a dangling pointer in three ways:
+ 1. de-allocation of memory but keeping a pointer.
+ 2. function call
+ 3. variable goes out of scope. 
+ 4. returning a pointer a local variable .
+ 5. deallocating memory twice.
+
+dangling pointers can lead to unpreditable and potentially harmful behavior in your programs , including crashes and security vulnerablities.
+
+
+wild pointer: is a pointer that has not been intialised to anything(not even Null). 
+              **In this case, the pointer may be set to a non-NULL garbage value that is not a valid address. 
+
+example: 
+ 
+int main()  
+{  
+    int *p; /* wild pointer */  
+  
+    int x = 10;  
+  
+    // p is not a wild pointer now  
+    p = &x;  
+  
+    return 0;  
+}  
+
+

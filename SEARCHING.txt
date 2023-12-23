@@ -1,0 +1,161 @@
+	                       SEARCHING 
+
+Searching Algorithms are designed to check for an element or retrieve an element from any data structure where it is stored.
+
+	ALGORITHMS USED IN SEARCHING OPERATION
+
+1. sequential search: the list or array is transversed sequentially and every element is checked .
+ex: linear search 
+
+2.interval search: this algorithm is specifically designed for searching in sorted data-structures.
+
+they are much more efficient than Linear Search as they repeatedly target the center of the search structure and divide the search space in half.
+
+ For Example: Binary Search.
+
+	TYPES OF SEARCHING
+
+(I)        LINEAR SEARCH
+
+ * uses sequential search algo.
+
+it starts from one end and goes through each element of the list until the desired element is found .
+
+otherwise the search continues till the end of the data set. 
+
+	ALGORITHM 
+
+1. Every element is considered as a potential match for the key and checked for the same.
+
+2. If any element is found equal to the key, the search is successful and the index of that element is returned.
+
+3. If no element is found equal to the key, the search yields “No match found”.
+
+
+	time complexity
+
+best case: o(1) = the key might be present at the first index.
+worst case: o(n) = the key might be present at the last index. 
+avg case: o(n) = anywhere
+
+	space complexity 
+
+auxillary space: o(1)
+
+except for the variable to iterate through the list , no other variable is used.
+
+advantage 
+
+*doesn't require any additional memory.
+*  can be used on an array of any data type.
+* well-suited algo for small datasets.
+
+drawback
+
+* it's slow due to the time compexity of o(n).
+* not suitable for large arrays.
+
+when to use: 
+
+* when dealing with a small dataset. 
+
+* when searching for a dataset stored in contiguous memory.
+
+
+(II)           BINARY SEARCH 
+
+* searching algorithm 
+
+* used in a sorted array by repeatedly dividing search interval in half.
+
+* idea: using the info that the array is sorted and reduce the time complexity to o(logn).\
+
+
+	CONDITIONS
+
+* the data structure must be sorted. 
+* access to any element of the data structure takes constant time. 
+
+means:  no matter how large the data structure is, the time taken to access any single element remains the same.
+
+
+	ALGORITHM
+
+1.Compare the middle element of the search space with the key. 
+
+2.If the key is found at middle element, the process is terminated.
+
+3.If the key is not found at middle element, choose which half will be used as the next search space.
+
+4.If the key is smaller than the middle element, then the left side is used for next search.
+
+5.If the key is larger than the middle element, then the right side is used for next search.
+
+6.This process is continued until the key is found or the total search space is exhausted.
+
+
+	IMPLEMENTATION 
+
+it can be implemented in the following two ways: 
+
+1. iterative binary search algo: here we use while loop to continue the process of comparing the key and splitting the search spaces in two halves.
+
+
+2. recursive binary search algo: Create a recursive function and compare the mid of the search space with the key. And based on the result either return the index where the key is found or call the recursive function for the next search space.
+
+
+	TIME COMPLEXITY 
+
+1. best case: o(1)
+2. avg case: o(log n)
+3. worst case: o(log n)
+
+
+	SPACE COMPLEXITY
+
+auxillary space: o(1)
+                *if recursive call is considered then the auxiliary space = o(log n)
+
+
+advantages
+
+*faster than linear search,esp for large array.
+
+*more efficient than other searching algo with a similar time complexity such as interpolation search or exponential search.
+
+* is well suited for large datasets that are stored in external memory, such as on hard drive or in the cloud.
+
+drawback
+
+*the array should be sorted.
+
+*it must be stored in contiguous memory locations. 
+
+
+APPLICATION
+
+*can be used as a building block for more complex algo used in machine learning. 
+
+*can be used for searching in computer graphics.
+
+*used for searching a database. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
