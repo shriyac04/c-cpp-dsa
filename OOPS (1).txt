@@ -1,0 +1,380 @@
+	Object-Oriented Programming (OOPS)
+
+the major purpose of c++ is to introduce the concept of oops to c programmimg language.
+
+oop is a paradigm that provides many concepts such as inheritance, data binding, polymorphism etc.
+
+the programmimg paradigm where everything is represented as an object is known as truly object-oriented programmimg language. 
+
+Smalltalk is considered as the first truly oop language .
+
+
+It simplifies the software development and maintenance by some concepts:
+
+1. object 
+2. class
+3. inheritance
+4. polymorphism
+5. abstraction
+6. encapsulation
+
+oop is a methodology or paradigm [para-dim](model) to design a program using classes and objects.
+
+	object 
+
+Any entity that has state and behavior is known as an object.
+For example: chair, pen, table, keyboard, bike etc. It can be physical and logical.
+
+
+
+	class
+
+collection of objects. 
+  
+It is a logical entity 
+
+A Class in C++ is the foundational element that leads to Object-Oriented programming.
+
+A class instance must be created in order to access and use the user-defined data type's data members and member functions.
+
+An object's class acts as its blueprint. 
+
+EXAMPLE: Even if different names and brands may be used for different cars, all of them will have some characteristics in common, such as four wheels, a speed limit, a range of miles, etc. In this case, the class of car is represented by the wheels, the speed limitations, and the mileage.
+
+	Inheritance
+
+when one object aquires all the properties and behaviours of parent object, i.e., known as inheritance.
+
+it provides code reusability.
+
+it is used to achieve runtime polymorphism.
+
+1. sub class/derived class(child): refers to a class that receives properties from another class.
+
+2. super class/base class(parent): refers to the class from which a subclass inherits its properties.
+
+3. reusability:  when we wish to create a new class, but an existing class already contains some of the code we need, we can generate our new class from the old class using inheritance property.
+
+
+	Polymorphism
+
+When one task is performed by different ways i.e. known as polymorphism. For example: to convince the customer differently, to draw something e.g. shape or rectangle etc.
+
+Different situations may cause an operation to behave differently. The type of data utilized in the operation determines the behavior.
+
+
+	Abstraction
+
+Hiding internal details and showing functionality is known as abstraction. 
+
+Data abstraction is the process of exposing to the outside world only the information that is absolutely necessary while concealing implementation or background information.
+
+Example: Asking your parents how you were born.
+
+In C++, we use abstract class and interface to achieve abstraction.
+
+
+	Encapsulation
+
+Binding (or wrapping) code and data together into a single unit is known as encapsulation. 
+
+For example: capsule, it is wrapped with different medicines.
+
+Data abstraction or concealing is another side effect of encapsulation.
+
+In the same way that encapsulation hides the data.
+
+
+Why Encapsulation?
+
+1.It is considered good practice to declare your class attributes as private. Encapsulation ensures better control of your data, because one can change one part of the code without affecting other parts.
+
+2.Increased security of data
+
+
+
+Dynamic Binding - In dynamic binding, a decision is made at runtime regarding the code that will be run in response to a function call. For this, C++ supports virtual functions.
+
+
+
+	oops vs procedure-oriented programming
+
+1.OOPs makes development and maintenance easier where as in Procedure-oriented programming language it is not easy to manage if code grows as project size grows.
+
+2.OOPs provide data hiding whereas in Procedure-oriented programming language a global data can be accessed from anywhere.
+
+3.OOPs provide ability to simulate real-world event much more effectively. We can provide the solution of real word problem if we are using the Object-Oriented Programming language.
+
+
+With the use of classes and objects, object-oriented programming makes code maintenance simple. 
+Because inheritance allows for code reuse, the program is simpler because you don't have to write the same code repeatedly.
+Data hiding is also provided by ideas like encapsulation and abstraction.
+
+
+Why is C++ a partial oop ?
+
+The C++ programming language is categorized as a partial object-oriented programming language despite the fact that it supports OOP concepts, including classes, objects, inheritance, encapsulation, abstraction, and polymorphism.
+
+REASONS:
+
+1) The main function must always be outside the class in C++ and is required. This means that we may do without classes and objects and have a single main function in the application.
+
+It is expressed as an object in this case, which is the first time Pure OOP has been violated.
+
+2) Global variables are a feature of the C++ programming language that can be accessed by any other object within the program and are defined outside of it. 
+Encapsulation is broken here.
+Even though C++ encourages encapsulation for classes and objects, it ignores it for global variables.
+
+
+	Overloading
+
+Polymorphism also has a subset known as overloading. 
+
+**An existing operator or function is said to be overloaded when it is forced to operate on a new data type.
+
+
+	C++ OBJECT
+
+object is an entity that has state and behavior.
+
+Here, state means data and behavior means functionality.
+
+Object is a runtime entity, it is created at runtime.
+
+Object is an instance of a class. 
+
+All the members of the class can be accessed through object.
+
+example: Student s1;  //creating an object of Student      
+
+In this example, Student is the type and s1 is the reference variable that refers to the instance of Student class.
+
+
+
+	Access specifier 
+
+it defines how the members of a class can be accessed. 
+
+there are three types of access specifiers:
+
+1. public: members are accessible from outside the class.
+2. private: members cannot be accessed (or viewed) from outside the class.
+3. protected: members cannot be accessed from outside the class, however they can be accessed in inherited class.
+
+
+private class members can be accessed indirectly by calling it in public class.
+
+
+
+
+	Static member functions
+
+they are used to define the static data member function inside and outside of the class. 
+
+:: = scope resolution operator 
+
+this operator gives you more liberty in naming your variable by letting you distinguish between variables with the same name.
+
+def:The static member functions are special functions used to access the static data members or other static member functions.
+
+	static data member
+
+A static data member, also known as a static member variable, is a variable in a class that is shared by all instances (objects) of that class rather than being specific to any one instance. In other words, it is a class-level variable rather than an instance-level variable.
+
+ 
+	constant data member 
+
+Data members are like the variable that is declared inside a class, but once the data member is initialized, it never changes, not even in the constructor or destructor.
+
+The constant data member is initialized using the const keyword before the data type inside the class. 
+
+The const data members cannot be assigned the values during its declaration; however, they can assign the constructor values.
+
+
+	constant objects 
+
+When we create an object using the const keyword, the value of data members can never change till the life of the object in a program.
+
+ The const objects are also known as the read-only objects.
+
+
+	constant member function 
+
+A const is a constant member function of a class that never changes any class data members, and it also does not call any non-const function.
+
+It is also known as the read-only function.
+
+We can create a constant member function of a class by adding the const keyword after the name of the member function.
+
+Syntax
+
+return_type mem_fun() const  
+{  
+
+}   
+
+
+	friend function
+
+this function is used to access protected and private data of a class.
+
+
+syntax:
+
+class class_name    
+{    
+    friend data_type function_name(argument/s);            // syntax of friend function.  
+};    
+
+
+	Characteristics of a Friend function
+
+1.The function is not in the scope of the class to which it has been declared as a friend.
+
+2.It cannot be called using the object as it is not in the scope of that class.
+
+3.It can be invoked like a normal function without using the object.
+
+4.It cannot access the member names directly and has to use an object name and dot
+ membership operator with the member name.
+
+5.It can be declared either in the private or the public part.
+
+
+
+Passing by Value:
+
+When you pass an object by value, a copy of the object is created within the function.
+Changes made to the object within the function do not affect the original object.
+Use this method when you want to work with a local copy of the object without modifying the original object.
+Example:
+
+
+class MyClass {
+public:
+    int value;
+};
+
+void modifyByValue(MyClass obj) {
+    obj.value = 42;  // Changes won't affect the original object
+}
+
+int main() {
+    MyClass myObj;
+    myObj.value = 10;
+
+    modifyByValue(myObj);
+
+    std::cout << myObj.value;  // This will still be 10
+    return 0;
+}
+Passing by Reference:
+
+When you pass an object by reference, you work directly with the original object within the function.
+Any changes made to the object within the function affect the original object.
+Use this method when you want to modify the original object.
+Example:
+
+cpp
+Copy code
+class MyClass {
+public:
+    int value;
+};
+
+void modifyByReference(MyClass &obj) {
+    obj.value = 42;  // Changes will affect the original object
+}
+
+int main() {
+    MyClass myObj;
+    myObj.value = 10;
+
+    modifyByReference(myObj);
+
+    std::cout << myObj.value;  // This will be 42
+    return 0;
+}
+Passing by Address (Pointers):
+
+When you pass an object by address (using pointers), you work with the original object through a pointer within the function.
+Changes made to the object through the pointer affect the original object.
+Use this method when you want to work with the original object and you might need to modify the pointer itself (e.g., allocate memory dynamically).
+Example:
+
+cpp
+Copy code
+class MyClass {
+public:
+    int value;
+};
+
+void modifyByAddress(MyClass *ptr) {
+    ptr->value = 42;  // Changes will affect the original object
+}
+
+int main() {
+    MyClass myObj;
+    myObj.value = 10;
+
+    modifyByAddress(&myObj);
+
+    std::cout << myObj.value;  // This will be 42
+    return 0;
+}
+
+	returning object 
+
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+class Example {
+public:
+    int a;
+ 
+    // This function will take
+    // object as arguments and
+    // return object
+    Example add(Example Ea, Example Eb)
+    {
+        Example Ec;
+        Ec.a = Ea.a + Eb.a;
+ 
+        // returning the object
+        return Ec;
+    }
+};
+int main()
+{
+    Example E1, E2, E3;
+ 
+    // Values are initialized
+    // for both objects
+    E1.a = 50;
+    E2.a = 100;
+    E3.a = 0;
+ 
+    cout << "Initial Values \n";
+    cout << "Value of object 1: " << E1.a
+         << ", \nobject 2: " << E2.a
+         << ", \nobject 3: " << E3.a
+         << "\n";
+ 
+    // Passing object as an argument
+    // to function add()
+    E3 = E3.add(E1, E2);
+ 
+    // Changed values after
+    // passing object as an argument
+    cout << "New values \n";
+    cout << "Value of object 1: " << E1.a
+         << ", \nobject 2: " << E2.a
+         << ", \nobject 3: " << E3.a
+         << "\n";
+ 
+    return 0;
+}
+
+
+
